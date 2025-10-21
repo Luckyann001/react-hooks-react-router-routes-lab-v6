@@ -1,19 +1,23 @@
-import { createRoutesFromElements, Route } from "react-router-dom";
-import Home from "./components/home";
-import Movies from "./components/pages/Movies";
+import React from "react";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import Movie from "./components/pages/Movie";
 import Directors from "./components/pages/Directors";
 import Actors from "./components/pages/Actors";
-import Movie from "./components/MovieCard";
-import App from "./App";
 
-const routes = createRoutesFromElements(
-  <Route path="/" element={<App />}>
-    <Route index element={<Home />} />
-    <Route path="movies" element={<Movies />} />
-    <Route path="directors" element={<Directors />} />
-    <Route path="actors" element={<Actors />} />
-    <Route path="movie/:id" element={<Movie />} />
-  </Route>
-);
+const routes = [
+  {
+    path: "/",
+    element: (
+      <>
+        <NavBar />
+        <Home />
+      </>
+    ),
+  },
+  { path: "/movies/:id", element: <Movie /> },
+  { path: "/directors", element: <Directors /> },
+  { path: "/actors", element: <Actors /> },
+];
 
 export default routes;
