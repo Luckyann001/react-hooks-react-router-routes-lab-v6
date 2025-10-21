@@ -1,16 +1,11 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
 function Actors() {
   return (
-    <>
-      <header>
-        {/* What component should go here? */}
-      </header>
-      <main>
-        {/* Actor info here! */}
-      </main>
-    </>
+    <div>
+      <h1>Actors Page</h1>
+    </div>
   );
-};
+}
 
 export default Actors;
