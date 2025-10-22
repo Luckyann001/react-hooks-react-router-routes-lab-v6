@@ -1,23 +1,16 @@
-import React from "react";
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import Movie from "./components/pages/Movie";
-import Directors from "./components/pages/Directors";
-import Actors from "./components/pages/Actors";
+// src/routes.jsx
+import Home from "./pages/Home";
+import Actors from "./pages/Actors";
+import Directors from "./pages/Directors";
+import Movie from "./pages/Movie";
+import NotFound from "./pages/ErrorPage";
 
 const routes = [
-  {
-    path: "/",
-    element: (
-      <>
-        <NavBar />
-        <Home />
-      </>
-    ),
-  },
-  { path: "/movies/:id", element: <Movie /> },
-  { path: "/directors", element: <Directors /> },
+  { path: "/", element: <Home /> },
   { path: "/actors", element: <Actors /> },
+  { path: "/directors", element: <Directors /> },
+  { path: "/movie/:id", element: <Movie /> },
+  { path: "*", element: <NotFound /> },
 ];
 
 export default routes;
